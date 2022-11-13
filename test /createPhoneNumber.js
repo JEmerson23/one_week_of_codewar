@@ -34,6 +34,7 @@ console.log(createPhoneNumber([13,4,8,9,0,7,7,1,5,0]));//no ok
 console.log(createPhoneNumber([0,8,2,9.5,7,2.1,1,8,3,3]));//no ok */
 
 //[A melhor resposta que encontrei no codeWar na minha visão]
+//
 
 function createPhoneNumber(numberArray){
   return numberArray.reduce((result,number)=>result.replace('x',number),"(xxx) xxx-xxxx");
