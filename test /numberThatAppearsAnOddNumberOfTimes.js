@@ -60,6 +60,9 @@ console.log(oddAppearances([8,8,8,0,0,2,2,1,1,0,9,7,0,7]));//ok -> 9
 console.log(oddAppearances([2,2,3,4,3,9,0,0,3,9,1,1,4,4,4]));//ok -> 3
 */
 
+/*
+//[minha melhor solução]
+
 function oddAppearances(numberArray){
   let counter = [];
   numberArray.forEach(num=>!counter.find(n => n[0]==num)?counter.push([num,1]):counter[counter.findIndex(n => n[0]==num)][1]++);
@@ -68,3 +71,10 @@ function oddAppearances(numberArray){
 
 console.log(oddAppearances([2,2,3,4,3,9,0,0,3,9,1,8,8,8,8]))//ok ->4
 console.log(oddAppearances([9,9,7]))//ok -> 7
+*/
+
+/*
+[Não há um solução melhor que a minha, pois ao não entender corretamente o objetivo do kata, onde pedia uma função para uma array que tinha apenas um inteiro com aparições impar, acabei fazendo uma para vários inteiros com aparições impar onde retorna o menor de valor menor que surgi primeiro.
+
+  Apesar disso funciona para o objetivo dado pelo codewars.]
+*/
