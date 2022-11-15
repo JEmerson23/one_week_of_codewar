@@ -27,6 +27,8 @@ console.log(oddAppearances([0,1,1,2,2,2,7,8,8]))// ok -> 0
 console.log(oddAppearances([1,3,5,4,3,3,3,9,9,9,2,2]))// ok -> 1
 */
 
+/*
+//[ok]
 function oddAppearances(numberArray){
   let result = {};
   
@@ -56,7 +58,13 @@ console.log(oddAppearances([1,2,2,3,3,3,8,8,8,8])); //ok -> 1
 console.log(oddAppearances([2,2,3,3,8,8,8,-4])); // ok -> -4
 console.log(oddAppearances([8,8,8,0,0,2,2,1,1,0,9,7,0,7]));//ok -> 9
 console.log(oddAppearances([2,2,3,4,3,9,0,0,3,9,1,1,4,4,4]));//ok -> 3
+*/
 
 function oddAppearances(numberArray){
-  return 
+  let counter = [];
+  numberArray.forEach(num=>!counter.find(n => n[0]==num)?counter.push([num,1]):counter[counter.findIndex(n => n[0]==num)][1]++);
+  return counter.filter(num=>num[1]%2 != 0).sort((n1,n2)=> n1[1] - n2[1])[0][0];
 }
+
+console.log(oddAppearances([2,2,3,4,3,9,0,0,3,9,1,8,8,8,8]))//ok ->4
+console.log(oddAppearances([9,9,7]))//ok -> 7
