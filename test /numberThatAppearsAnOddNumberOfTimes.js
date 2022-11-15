@@ -54,4 +54,9 @@ function oddAppearances(numberArray){
 
 console.log(oddAppearances([1,2,2,3,3,3,8,8,8,8])); //ok -> 1
 console.log(oddAppearances([2,2,3,3,8,8,8,-4])); // ok -> -4
-console.log(oddAppearances[8,8,8,0,0,2,2,1,1,0,9,7,0,7]); //Erro
+console.log(oddAppearances([8,8,8,0,0,2,2,1,1,0,9,7,0,7]));//ok -> 9
+console.log(oddAppearances([2,2,3,4,3,9,0,0,3,9,1,1,4,4,4]));//ok -> 3
+
+function oddAppearances(numberArray){
+  return 
+}
