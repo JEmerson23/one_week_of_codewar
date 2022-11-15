@@ -1,4 +1,5 @@
 /*
+ DIA: 1
  objetivo: criar uma função que receba uma array com números de 0-9 e
  retorne uma string no formato de um número de telefone.
  exemplo: [1,2,3,4,5,6,7,8,9,0] -> "(123) 456-7890"
