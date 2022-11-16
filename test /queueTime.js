@@ -1,7 +1,8 @@
 /*
  DIA: 3
  objetivo:
-  contador que tem como base um array com inteiros que representam o tempo que cada clientes levará, e um inteiros que representam o número de atendentes.
+  contador que tem como base um array com inteiros que representam o
+  tempo que cada clientes levará, e um inteiros que representam o número de atendentes.
 */
 
 /*
