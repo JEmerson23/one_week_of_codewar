@@ -37,4 +37,4 @@ console.log(pigIt("Leite quente !"))
 //[minha melhor solução]
 const pigIt = phrase => phrase.split(' ').map(word => !/[^a-zA-Z]/.test(word)?word.substr(1)+word[0]+"ay":word).join(' ');
 
-console.log(pigIt("Suco de tomate ?"))
+console.log(pigIt("Suco de tomate ?"));//ok -> ucoSay eday omatetay ?
