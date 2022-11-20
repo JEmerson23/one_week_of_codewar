@@ -3,6 +3,7 @@
  objetivo: Um decodificador de código morse simples
 */
 
+//criei uma tabela de código Morse improvisada para poder fazer os teste
 function morseCode() {
   this.alphabet = {
   a:'.-',
@@ -84,6 +85,7 @@ function morseCode() {
 }
 
 const MORSE_CODE = new morseCode().getAll();
+//------------------//
 
 /*
 //[QUASE SUCESSO]
@@ -103,6 +105,8 @@ console.log(decodeMorse(" . ..- "))
 //console.log( new morseCode().translate("."));ok
 */
 
+/*
+//[QUASE SUCESSO]
 function translate(string,dictionary ,toMorseCode=true){
   if(!toMorseCode)
    return Object.keys(dictionary).find(key => dictionary[key] === string);
@@ -127,3 +131,46 @@ function replace(phrase,dictionary) {
 }
 
 console.log(replace(' - --- -.. ---   --- ..-   -. .- -.. .- ',MORSE_CODE));
+*/
+
+/* 
+//[QUASE SUCESSO]
+function decodeMorse(string){
+  const result = [];
+  const translate = letter => Object.keys(MORSE_CODE).find(key => MORSE_CODE[key] == letter);
+  
+  string.split('   ')
+   .forEach(word =>{
+     result.push(word.split(' ')
+      .map(letter => letter != '' ? translate(letter) : " ")
+       .join(''));
+     //. -. -..
+   });
+   return result.join(' ').toUpperCase();
+}
+
+console.log(decodeMorse(' ... ..- -.-. . ... ... --- '));//ok -> SUCESSO
+
+console.log(decodeMorse('   .... . -.--   '))
+*/
+
+//[minha melhor solução]
+//[SUCESSO]
+function decodeMorse(string){
+  //Esta função não é importante para o Kata do codewars
+  const translate = letter => Object.keys(MORSE_CODE).find(key => MORSE_CODE[key] == letter);
+  //----------code------------//
+  const result = [];
+  
+  string.split('   ').forEach(word => {
+    result.push(
+      word.split(' ')
+       .map(letter => translate(letter))
+        .join('')
+    );
+  });
+  
+  return result.join(' ').trim().toUpperCase();
+}
+
+console.log(decodeMorse(' .... . .-.. .-.. ---   .-- --- .-. .-.. -.. '));//ok -> HELLO WORLD
