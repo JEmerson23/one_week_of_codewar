@@ -114,17 +114,16 @@ console.log(translate("e",MORSE_CODE));//ok -> .
 console.log(translate(".",MORSE_CODE,false));//ok -> e
 
 function replace(phrase,dictionary) {
-  let words = phrase.split('   ');
-  let result;
-  let letters = words[0].split(' ');
-  console.log(letters.map(letter =>{
-    if(/[a-zA-Z0-9.,?"':=]/i.test(letter))
-      return translate(letter,dictionary,false);
-     else if(letter == '')
-      return  ' ';
-  }));
+  let result = [];
+  phrase.split('   ').forEach(word => {
+    result.push(word.split(' ')
+     .map(letter => letter != '' ? translate(letter,dictionary,false) : " ")
+      .join(''));
+      
+    //end 
+  });
   
- //words[0].replace(letter,translate(letter,dictionary,false)))
+  return result.join(' ');
 }
 
-replace(' - ..- -.. ...   ... ..- -. .- -.. .- ',MORSE_CODE)
+console.log(replace(' - --- -.. ---   --- ..-   -. .- -.. .- ',MORSE_CODE));
